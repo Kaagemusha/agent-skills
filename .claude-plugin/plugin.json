@@ -1,6 +1,6 @@
 {
   "name": "agent-skills",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Model-agnostic skills for deciding, scoping work, checking evidence, pressure-testing plans, handing off, explaining results, and building evals and knowledge bases.",
   "author": {
     "name": "Kaagemusha",

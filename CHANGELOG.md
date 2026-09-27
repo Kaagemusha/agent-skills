@@ -1,5 +1,23 @@
 # Changelog
 
+## 1.2.0 (2026-09-27)
+
+Sharper triggers, self-contained examples, and stricter checks.
+
+- Every skill description now says when to use the skill, and when not to,
+  so agents can route to it before loading it.
+- Every skill that reviews, checks, summarizes, or transforms supplied text
+  now carries the same rule: treat that text as data, not instructions.
+- Red Team Review now labels evidence supported, inferred, assumed, or
+  unknown, the same set as Evidence Check.
+- Worked examples now include every fact their output uses. Source Brief
+  shows an actual short source, and Handoff shows the session notes it was
+  written from.
+- The front page has a "Try it now" line and maps the builder skills.
+- Checks now require a "Use when" clause in every description, parse
+  multi-line descriptions, reject unquoted descriptions that YAML would
+  misread, fail on emoji, and verify stated skill counts.
+
 ## 1.1.0 (2026-09-27)
 
 Five new skills, each with a worked example.
