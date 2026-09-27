@@ -4,9 +4,10 @@
 
 ```text
 Turn this into a work order. New hires keep asking the same questions in their
-first week. Can someone make the onboarding docs less confusing? We already
-agreed the docs stay in the team wiki. Maya can own it, and it should be done
-before the October 12 cohort starts.
+first week, mostly in team chat. Nobody has written down which ones. Can
+someone make the onboarding docs less confusing? We already agreed the docs
+stay in the team wiki. Maya can own it, and it should be done before the
+October 12 cohort starts.
 ```
 
 ## Output
@@ -43,7 +44,7 @@ onboarding docs, so the team spends less time repeating answers.
 
 ## Owner and dependencies
 - Owner: Maya
-- Inputs: team chat history and notes from the last two cohorts
+- Inputs: team chat history from the last two cohorts
 - Dependencies: wiki edit access
 - Constraints or required authority: none beyond normal wiki edits
 

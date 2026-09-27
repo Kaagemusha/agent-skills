@@ -3,6 +3,10 @@
 ## Input
 
 ```text
+Before: when the accounting system did not respond overnight, the invoice
+export failed without any warning, and missing invoices usually surfaced only
+at month-end close.
+
 Work completed and verified:
 - The nightly invoice export now retries up to three times when the accounting
   system does not respond, instead of failing silently.
