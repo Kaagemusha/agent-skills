@@ -194,7 +194,7 @@ function scan(label, path, content, patterns) {
   for (const match of content.matchAll(/\b(?:\d{1,3}\.){3}\d{1,3}\b/g)) {
     if (match[0] !== "127.0.0.1") fail(`${label}: IP address ${match[0]}`);
   }
-  if (extname(path) === ".md" && content.includes("—")) fail(`${label}: contains an em dash`);
+  if (extname(path) === ".md" && content.includes("\u2014")) fail(`${label}: contains an em dash`);
   if (EMOJI.test(content)) fail(`${label}: contains an emoji`);
 }
 
