@@ -32,8 +32,8 @@ today, 2026-09-24:
 
 ## Objective and source of truth
 Move the website newsletter signup from the old email tool to the new one
-without losing signups. The migration checklist in the team tracker governs;
-if this note disagrees with it, the checklist wins.
+without losing signups. The "Newsletter migration" card in the team tracker
+is the plan of record; if this note disagrees with it, the card wins.
 
 ## Current state and next action
 The new form is built and embedded on a hidden test page. The live site still
@@ -58,7 +58,7 @@ confirm each one appears in the new tool's "Newsletter" list.
   the switch.
 
 ## Ground-truth pointers
-- Migration checklist: team tracker, "Newsletter migration" card
+- Plan of record: team tracker, "Newsletter migration" card
 - Test page: the hidden page named "signup-test" in the site editor
 - New tool: "Newsletter" list, import log dated 2026-09-24
 ```

@@ -19,7 +19,7 @@ first.
 
 | Skill | Use it when | What you get |
 |---|---|---|
-| [Decision Deliberation](skills/decision-deliberation) | A consequential choice has no plan yet | Five lenses, a tension map, and options for the person who decides |
+| [Decision Deliberation](skills/decision-deliberation) | A consequential choice is still open | Five lenses, a tension map, and options for the person who decides |
 | [Source Brief](skills/source-brief) | A long source needs to be read fast | A short brief checked sentence by sentence against the source |
 | [Brief To Work Order](skills/brief-to-work-order) | A request is ready to be assigned | Bounded scope, deliverables, owner, and pass/fail acceptance checks |
 | [Evidence Check](skills/evidence-check) | A draft or decision rests on claims | Each claim labeled supported, inferred, assumed, or unknown, with its source |
@@ -68,6 +68,9 @@ detects the agents on your machine:
 ```bash
 npx skills add Kaagemusha/agent-skills
 ```
+
+This installs into the current project. Add `-g` to install for your user
+account instead, so the skills work in every project.
 
 Install one skill only:
 

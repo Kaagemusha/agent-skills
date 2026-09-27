@@ -35,6 +35,8 @@ This only helps with short outages. For longer ones see [[incident-runbook]].
 - Rule 2 (mechanical), "Monitoring": opens on a table with no sentence. Fix:
   add "Alert on the retry rate, because retries make outages invisible to
   users." before the table.
+- Rule 2 (mechanical), "Caveat": opens with "This," whose subject is only in
+  the first section. Fix: "Automatic retries only help with short outages."
 
 ## Advisory
 - Rule 1 (mechanical), top of note: no claim before the first section, so a

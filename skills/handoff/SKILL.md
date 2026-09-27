@@ -28,19 +28,19 @@ happened.
 
 ## Prepare the handoff
 
-1. Name the objective and the authoritative source of truth. If this note and
-   that source disagree, identify which one governs.
+1. Name the objective and the authoritative source of truth, and say which
+   governs if this note and that source disagree.
 2. State the current state and the single next concrete action.
 3. Record constraints and decisions that still affect the work.
 4. Name completed changes and where they can be inspected.
 5. State what was actually checked and the result. Distinguish observed facts
    from beliefs, assumptions, and unverified claims.
-6. Capture approaches ruled out only when knowing why will prevent repeated
-   work.
+6. Record approaches ruled out, under constraints and decisions, only when
+   knowing why will prevent repeated work.
 7. State open questions, risks, and stop or rollback conditions.
-8. Point to the live source of truth: relevant files, records, branch, revision,
-   or system location. Do not copy private or sensitive material into the
-   handoff unnecessarily.
+8. Point to where the live state can be inspected: files, records, branch,
+   revision, or system location. Point to private or sensitive material
+   rather than copying it.
 
 Keep only details that change the next person's action or prevent a likely
 mistake. Use absolute dates when time matters. Do not claim work is complete

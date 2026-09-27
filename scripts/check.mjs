@@ -56,6 +56,21 @@ function parseFrontmatter(text) {
   return { fields, errors, body: text.slice(match[0].length) };
 }
 
+// Literal headings ("## Gates") and field labels ("- Owner:") from the first
+// markdown block in the Output section. Placeholders in brackets are skipped.
+function outputMarkers(body) {
+  const output = body.split(/^## Output.*$/m)[1];
+  const block = output?.match(/```markdown\n([\s\S]*?)\n```/)?.[1] ?? "";
+  const markers = [];
+  for (const line of block.split("\n")) {
+    const heading = line.match(/^#{2,}\s+[^[\]]+$/);
+    const field = line.match(/^- [A-Z][\w ,'-]*:/);
+    if (heading) markers.push({ text: heading[0].trim(), exact: true });
+    else if (field) markers.push({ text: field[0], exact: false });
+  }
+  return markers;
+}
+
 async function checkSkills() {
   const dirs = (await readdir("skills", { withFileTypes: true }))
     .filter((entry) => entry.isDirectory())
@@ -97,6 +112,14 @@ async function checkSkills() {
       if (!headings.includes(required)) fail(`${skillPath}: missing "## ${required}" section`);
     }
     if (!headings.some((h) => h.startsWith("output"))) fail(`${skillPath}: missing an "## Output" section`);
+
+    // The worked example must show every heading and field the output shape promises.
+    const exampleLines = (await readFile(join(base, "EXAMPLE.md"), "utf8").catch(() => ""))
+      .split("\n").map((line) => line.trim());
+    for (const { text, exact } of outputMarkers(body)) {
+      const found = exampleLines.some((line) => (exact ? line === text : line.startsWith(text)));
+      if (!found) fail(`${base}/EXAMPLE.md: output is missing "${text}" from the SKILL.md output shape`);
+    }
   }
   return dirs;
 }

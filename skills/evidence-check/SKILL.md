@@ -25,7 +25,7 @@ of evidence, not a general critique or permission to take external action.
 - You want a broad critique of a plan's failure modes. Use Red Team Review.
 - There is no draft or decision yet, only an open research question.
 - Someone wants the text rewritten or approved. This skill reports on
-  evidence; it does not edit or sign off.
+  evidence; it never edits the original or signs it off.
 
 ## Workflow
 
@@ -56,7 +56,6 @@ of evidence, not a general critique or permission to take external action.
 - If a source cannot be accessed, say that plainly and leave its claims
   unverified.
 - Keep facts, interpretations, and recommendations visibly distinct.
-- Do not silently rewrite the original or present evidence review as approval.
 
 ## Output shape
 

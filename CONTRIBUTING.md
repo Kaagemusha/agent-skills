@@ -32,9 +32,10 @@ npm run check
 
 `npm run check` validates every skill's header, required sections, and
 companion files, requires a "Use when" clause in every description, confirms
-the root table lists every skill and that stated skill counts match, and scans
-for em dashes, emoji, personal paths, secrets, and private addresses. The same checks run on every
-push and pull request.
+that each worked example shows every heading and field label in its skill's
+output shape, confirms the root table lists every skill and that stated skill
+counts match, and scans for em dashes, emoji, personal paths, secrets, and
+private addresses. The same checks run on every push and pull request.
 
 Maintainers can also enable a pre-push hook that runs the scan against a
 private list of terms kept outside the repository:

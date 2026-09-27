@@ -54,9 +54,9 @@ passes.
 4. **Output.** A stable shape another person or agent can consume, such as a
    decision memo, findings list, or work order. "A thoughtful answer" fails.
 5. **Verification.** A check that shows whether it worked.
-6. **Examples and counterexamples.** At least one worked example. The
-   counterexamples may be the When not to use list if each item is concrete.
-   Examples teach the trigger; counterexamples prevent overuse.
+6. **Examples and counterexamples.** At least one worked example. A concrete
+   When not to use list can serve as the counterexamples. Examples teach the
+   trigger; counterexamples prevent overuse.
 7. **Portability.** No private names, client details, or private links.
 
 ## Overlap check
