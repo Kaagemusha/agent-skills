@@ -1,6 +1,6 @@
 ---
 name: red-team-review
-description: Pressure-test a concrete plan, draft, proposal, decision, prompt, or process by identifying material failure modes, weak assumptions, and unanswered questions. Do not use for open-ended ideation, simple fact checks, or security testing.
+description: Pressure-test a concrete plan, draft, proposal, decision, prompt, or process by identifying material failure modes, weak assumptions, and unanswered questions. Use when one concrete object is about to be relied on and the stakes justify looking for failure first. Do not use for open-ended ideation, choosing among options (use Decision Deliberation), simple fact checks, or security testing.
 license: MIT
 ---
 

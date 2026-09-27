@@ -1,6 +1,6 @@
 ---
 name: source-brief
-description: Turn one or more provided sources (article, report, transcript, long note) into a short, faithful brief for a human reader, using a preservation ledger before drafting and a sentence-by-sentence fidelity check after. Not for strategy, ranking, or recommendations.
+description: Turn provided sources (article, report, transcript, long note) into a short, faithful brief for a human reader, checked sentence by sentence against the source. Use when someone needs a long source, or several on one subject, made readable fast. Do not use for strategy, ranking, or recommendations, for checking a draft's claims (use Evidence Check), or when no source is provided.
 license: MIT
 ---
 

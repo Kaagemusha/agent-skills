@@ -1,6 +1,6 @@
 ---
 name: handoff
-description: Prepare a concise, reliable handoff so another person or agent can continue a task without guessing. Use at a session boundary, pause, or transfer of ownership.
+description: Prepare a concise, reliable handoff so another person or agent can continue a task without guessing, and check one before acting on it. Use when a work session ends before the task is done, ownership moves to someone else, or you receive a handoff. Do not use for finished work (use Nutshell).
 license: MIT
 ---
 

@@ -1,6 +1,6 @@
 ---
 name: eval-viability-check
-description: Before building an evaluation, benchmark, classifier test, or LLM-as-judge task, check in cheapest-and-most-fatal order whether the label can be determined from the input, whether the input leaks the label, what a trivial baseline scores, and whether there are enough labeled examples to detect a real difference.
+description: Check whether an evaluation can measure anything before it is built, using four gates (determinacy, leakage, baseline, power) and ending in build, redesign, or stop. Use when about to build or revive an eval, benchmark, labeled test set, or LLM-as-judge task, when its input or labels change, or when its results look suspiciously good or bad. Do not use to compare models on an established public benchmark.
 license: MIT
 ---
 

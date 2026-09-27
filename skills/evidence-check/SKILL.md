@@ -1,6 +1,6 @@
 ---
 name: evidence-check
-description: Check the support for claims in a draft, plan, report, or decision by tracing them to evidence and separating what is supported, inferred, assumed, or unknown.
+description: Check whether the claims in a draft, plan, report, or decision are backed by evidence, labeling each supported, inferred, assumed, or unknown with its source. Use when someone is about to rely on specific claims, or a summary cites sources nobody has inspected. Do not use for a broad critique of a plan (use Red Team Review) or an open research question.
 license: MIT
 ---
 

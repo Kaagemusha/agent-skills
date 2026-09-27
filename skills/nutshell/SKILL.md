@@ -1,6 +1,6 @@
 ---
 name: nutshell
-description: Explain substantial completed work in one short, candid, jargon-free paragraph for a smart adult outside the field.
+description: Explain substantial, verified work in one short, candid, jargon-free paragraph for a smart adult outside the field. Use when a capability shipped, a material fix landed, or a result changed a decision, and someone outside the work needs to understand it. Do not use for routine maintenance, partial or failed work, status checks, or work being paused (use Handoff).
 license: MIT
 ---
 
