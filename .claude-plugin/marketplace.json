@@ -8,7 +8,7 @@
   "plugins": [
     {
       "name": "agent-skills",
-      "description": "Brief To Work Order, Evidence Check, Red Team Review, Handoff, and Nutshell.",
+      "description": "Ten skills: Decision Deliberation, Source Brief, Brief To Work Order, Evidence Check, Red Team Review, Handoff, Nutshell, Eval Viability Check, Retrievable Writing, and Skill Or Not.",
       "source": "./"
     }
   ]

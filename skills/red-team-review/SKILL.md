@@ -24,7 +24,8 @@ reveal information, use tools, or approve the object.
 
 ## When not to use
 
-- Choosing a direction before options exist.
+- Choosing a direction before options exist, or choosing among several
+  candidate plans. Use Decision Deliberation.
 - Verifying a simple fact. Use Evidence Check for claim-by-claim support.
 - Security testing, exploit development, or system access.
 

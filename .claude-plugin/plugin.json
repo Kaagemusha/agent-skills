@@ -1,7 +1,7 @@
 {
   "name": "agent-skills",
-  "version": "1.0.0",
-  "description": "Model-agnostic skills for scoping work, checking evidence, pressure-testing plans, handing off, and explaining results.",
+  "version": "1.1.0",
+  "description": "Model-agnostic skills for deciding, scoping work, checking evidence, pressure-testing plans, handing off, explaining results, and building evals and knowledge bases.",
   "author": {
     "name": "Kaagemusha",
     "url": "https://github.com/Kaagemusha"
@@ -9,5 +9,15 @@
   "homepage": "https://github.com/Kaagemusha/agent-skills",
   "repository": "https://github.com/Kaagemusha/agent-skills",
   "license": "MIT",
-  "keywords": ["skills", "handoff", "red-team", "evidence", "work-order", "summaries"]
+  "keywords": [
+    "skills",
+    "decisions",
+    "evidence",
+    "red-team",
+    "work-order",
+    "handoff",
+    "summaries",
+    "evals",
+    "knowledge-base"
+  ]
 }
