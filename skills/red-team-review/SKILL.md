@@ -56,7 +56,8 @@ For every material finding, include:
 - concern
 - failure mechanism: what happens and how it causes harm or failure
 - impact: high, medium, or low
-- evidence status: observed, inferred, assumed, or unknown
+- evidence status: supported, inferred, assumed, or unknown (the Evidence Check
+  labels)
 - evidence or reasoning, with confidence
 - what would disprove or reduce the concern
 - consequence for the next decision
