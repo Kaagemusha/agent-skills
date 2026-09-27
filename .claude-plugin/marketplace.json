@@ -1,0 +1,15 @@
+{
+  "name": "kaagemusha",
+  "description": "Model-agnostic agent skills by Kaagemusha.",
+  "owner": {
+    "name": "Kaagemusha",
+    "url": "https://github.com/Kaagemusha"
+  },
+  "plugins": [
+    {
+      "name": "agent-skills",
+      "description": "Brief To Work Order, Evidence Check, Red Team Review, Handoff, and Nutshell.",
+      "source": "./"
+    }
+  ]
+}
