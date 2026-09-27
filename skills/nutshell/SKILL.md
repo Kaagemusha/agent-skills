@@ -34,12 +34,11 @@ or simplified technical walkthrough.
 3. Write one paragraph of 2 to 6 sentences, no more than 140 words.
 4. Prefer outcomes over implementation detail. Include at most one short
    mechanism clause.
-5. Rewrite if it contains jargon, overstates certainty, or does not clearly
-   say why the work matters.
+5. Rewrite if it breaks a language rule below or does not say why the work
+   matters.
 
 ## Language rules
 
-- Use plain, concrete language.
 - Replace hidden jargon such as "deploy," "pipeline," "sync," "server," or
   "layer" rather than defining it in parentheses. Prefer the everyday action
   or outcome it describes.
