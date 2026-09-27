@@ -1,5 +1,27 @@
 # Changelog
 
+## 1.3.0 (2026-09-27)
+
+Clearer verdicts, examples that match their skills, and a check that keeps
+them matched.
+
+- Eval Viability Check now says when to build, redesign, or stop. An untested
+  gate blocks a build, and the power gate reports pass, fail, or untested.
+- Brief To Work Order now sends undecided direction to Decision Deliberation,
+  not Red Team Review, and its description says when not to use it.
+- Source Brief now puts disagreement between several sources in its own
+  section.
+- Worked examples now match their output shapes: Red Team Review shows a
+  confidence line per finding, Handoff names the same plan of record as its
+  notes, Retrievable Writing catches every bare pronoun, and Source Brief
+  moves a caveat out of the source boundary line.
+- Several skills are shorter where they repeated themselves. No behavior was
+  removed.
+- The install section now says the installer writes to the current project,
+  and that `-g` installs for every project.
+- Checks now fail when a worked example is missing a heading or field label
+  from its skill's output shape.
+
 ## 1.2.0 (2026-09-27)
 
 Sharper triggers, self-contained examples, and stricter checks.
