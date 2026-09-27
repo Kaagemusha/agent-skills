@@ -5,8 +5,9 @@
 ```text
 Run Decision Deliberation. We are a 12-person marketing agency. Should we
 build our own AI tool for client reporting, or keep paying for the reporting
-product we use now? I decide by the end of the quarter. We pay about $1,400 a
-month for the current product, and two of our staff can code.
+product we use now? I'm the managing partner, and I decide by the end of the
+quarter. We pay about $1,400 a month for the current product, and two of our
+staff can code.
 ```
 
 ## Output

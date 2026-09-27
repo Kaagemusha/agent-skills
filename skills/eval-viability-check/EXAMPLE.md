@@ -4,9 +4,17 @@
 
 ```text
 Run Eval Viability Check. We want an LLM judge that reads a support ticket
-and predicts whether it will be escalated to engineering. We have 1,200 past
+and predicts whether it will be escalated to engineering, so we can route
+likely escalations to senior staff automatically. We have 1,200 past
 tickets; 18% were escalated. The input would be the ticket text as stored in
 our help desk. Test split is 240 tickets.
+
+Checked so far:
+- Our support lead labeled 10 tickets (5 escalated, 5 not) from the first
+  customer message only and got 8 right.
+- Stored ticket text includes a "Priority: P1" line that agents add after
+  triage. A rule that predicts "escalated" whenever P1 appears scores 91% on
+  the training split.
 ```
 
 ## Output
@@ -37,6 +45,6 @@ model.
 
 ## Next steps
 1. Rebuild the input from the first customer message only, then rerun gate 2.
-2. Pull more escalated tickets from older history to strengthen the
-   escalated class in the test split.
+2. Find more escalated tickets, for example in older history, to strengthen
+   the escalated class in the test split.
 ```

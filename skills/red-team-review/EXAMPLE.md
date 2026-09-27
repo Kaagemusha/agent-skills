@@ -31,7 +31,7 @@ your next renewal. Questions? Just reply to this email."
 
 ### R1: The email never states the old price or the size of the increase
 - Impact: high
-- Evidence status: observed
+- Evidence status: supported
 - Failure mechanism: customers learn the real increase only at renewal, feel
   surprised, and contact support or cancel.
 - Evidence or reasoning: the draft gives the new price only. High confidence.
@@ -41,7 +41,7 @@ your next renewal. Questions? Just reply to this email."
 
 ### R2: "Next month" has no date
 - Impact: medium
-- Evidence status: observed
+- Evidence status: supported
 - Failure mechanism: customers read the email weeks later and cannot tell
   whether the change has already happened.
 - Evidence or reasoning: relative dates age badly in email. Medium confidence.

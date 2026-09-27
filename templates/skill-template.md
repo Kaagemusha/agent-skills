@@ -1,6 +1,6 @@
 ---
 name: your-skill-name
-description: One sentence on what the skill does, then one on when to use it. Under 1024 characters.
+description: One sentence on what the skill does. Use when [concrete trigger]. Do not use for [nearby cases]. Under 1024 characters. Quote it if it contains a colon followed by a space.
 license: MIT
 ---
 
