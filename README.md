@@ -10,6 +10,11 @@ Each skill is one plain Markdown file of instructions. They work with any
 agent that supports the open `SKILL.md` format, and they are just as usable
 pasted into a chat.
 
+**Try it now.** After installing, ask your agent: "Use Red Team Review on
+this plan before I commit to it," then paste the plan. Without installing,
+paste [the skill's SKILL.md](skills/red-team-review/SKILL.md) into the chat
+first.
+
 ## Skills for everyday work
 
 | Skill | Use it when | What you get |
@@ -43,6 +48,14 @@ sources  ──> Source Brief ───────────┤
                                   Evidence Check / Red Team Review <─┤
                                                                      ├──> Handoff   (paused or passed on)
                                                                      └──> Nutshell  (finished)
+```
+
+The builder skills sit beside that flow:
+
+```text
+planned eval  ──> Eval Viability Check ──> build, redesign, or stop
+agent notes   ──> Retrievable Writing  ──> sections that stand alone
+reused prompt ──> Skill Or Not         ──> skill, saved prompt, or nothing
 ```
 
 Use them together or on their own. None depends on another.
