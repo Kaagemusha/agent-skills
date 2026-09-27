@@ -46,16 +46,14 @@ planned for Q1 2027.
   likely to go wrong, so it may not hold for a full support queue.
 - One pilot customer paused use after the assistant gave wrong refund
   information.
-
-Source boundary: the source is the company's own announcement; no independent
-figures were provided.
+- All figures come from the company's own announcement; none were
+  independently checked.
 ```
 
 ## What the fidelity check changed
 
 The brief cut the launch slogan, the chief executive's quote, and the
 waitlist line. None changes the factual picture.
-
 
 - The first draft said the assistant "resolves 41% of tickets." The source
   reports a past pilot result, so it became "resolved... during a six-week

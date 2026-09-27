@@ -52,8 +52,8 @@ return `REFUSE: outside brief scope` and name the better tool.
 
 ## Preservation ledger
 
-Before drafting, list privately the elements whose loss would make the brief
-misleading:
+Before drafting, privately list the elements whose loss would mislead the
+reader:
 
 - who said or did what
 - dates and sequence
@@ -75,8 +75,8 @@ reading. Cut filler, repeated framing, promotional language, weak analogies,
 and background the reader does not need.
 
 With several sources, separate what all of them say, what only one says, and
-where they differ on dates, numbers, scope, or framing. Do not smooth
-disagreement into consensus.
+where they differ on dates, numbers, scope, or framing, in a "Where sources
+differ" section after Key points. Do not smooth disagreement into consensus.
 
 ## Length
 
@@ -125,4 +125,4 @@ Never put private file locations, internal links, or raw private passages in
 the brief or its source boundary line.
 
 Omit Caveats when there are none. Use short direct quotes only when the exact
-wording matters.
+wording matters. A single-source brief has no "Where sources differ" section.
