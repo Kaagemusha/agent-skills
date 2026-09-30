@@ -31,13 +31,11 @@ owner can act on.
 
 ## Role boundary
 
-The skill may surface assumptions, pressure incentives, test boundaries,
-preserve dissent, name refusals, map tensions, and turn deliberation into
-options, questions, or a decision record.
-
-It may not decide for the owner, flatten disagreement into false consensus,
-cover weak evidence with confident prose, invent certainty, hide unresolved
-tensions, or add ceremony that does not improve the decision.
+Surface assumptions, pressure incentives, test boundaries, preserve dissent,
+map tensions, and turn deliberation into options, questions, or a decision
+record. Never decide for the owner, flatten disagreement into consensus,
+cover weak evidence with confident prose, or add ceremony that does not
+improve the decision.
 
 ## The five lenses
 
@@ -55,11 +53,10 @@ Every pass runs all five. Each is a function, not a persona.
    may be crowding out evidence, and what missing evidence would change the
    view?
 
-A named voice (a specific thinker or tradition) may be added only when it
-contributes a constraint the five lenses do not, and that reason fits in one
-sentence. Default to none, and use at most two. Never add one for prestige or
-tone. Record each in the output with its reason and whether it surfaced a
-distinction the lenses missed; remove it if it did not.
+Add a named voice (a specific thinker or tradition) only when it contributes
+a constraint the five lenses do not, stated in one sentence. Default to none;
+use at most two; never for prestige or tone. Record its reason and whether it
+surfaced a distinction the lenses missed; if not, drop its findings.
 
 ## Workflow
 
@@ -73,9 +70,8 @@ distinction the lenses missed; remove it if it did not.
    decision-relevant, or watch-only. Do not resolve a tension to make the
    output cleaner.
 4. **State refusals and limits.** For example: the evidence cannot separate
-   two explanations; the frame hides a value choice; the question is too broad
-   to deliberate usefully; the question has become medical, legal, or
-   financial and needs qualified review.
+   two explanations, the frame hides a value choice, or the question needs
+   qualified medical, legal, or financial review.
 5. **Check judgment.** Separate what is clear, what is plausible but
    unproven, what is unresolved, what evidence would change the view, and what
    the owner must decide.
@@ -84,14 +80,14 @@ distinction the lenses missed; remove it if it did not.
 
 ## Failure modes
 
-- **Prestige theater:** impressive names, generic output. Remove named voices
-  and rerun with the lenses only.
+- **Prestige theater:** impressive names, generic output. Rerun with the
+  lenses only.
 - **Premature coherence:** an elegant conclusion with no dissent. Keep at
   least one unresolved question in the tension map.
 - **Aesthetic seduction:** it sounds profound but changes nothing. Cut any
   line that does not clarify evidence, tension, refusal, or action.
-- **Responsibility drift:** the output reads as the decision. Rewrite the
-  judgment check so the owner's choice is explicit.
+- **Responsibility drift:** the output reads as the decision. Make the
+  owner's choice explicit in the judgment check.
 
 ## Output shape
 

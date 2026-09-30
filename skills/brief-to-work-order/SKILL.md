@@ -1,6 +1,6 @@
 ---
 name: brief-to-work-order
-description: Turn a request, rough brief, or agreed plan into a bounded work order with clear scope, deliverables, ownership, and checkable acceptance criteria. Use when someone is ready to assign execution.
+description: Turn a request, rough brief, or agreed plan into a bounded work order with clear scope, deliverables, ownership, and checkable acceptance criteria. Use when someone is ready to assign execution. Do not use while the direction is still undecided (use Decision Deliberation) or to record finished or paused work (use Nutshell or Handoff).
 license: MIT
 ---
 
@@ -22,8 +22,8 @@ change the work instead of silently making them.
 
 ## When not to use
 
-- The direction is still undecided. Explore options or run a Red Team Review
-  first; a work order should not make the strategic choice.
+- The direction is still undecided. Use Decision Deliberation first; a work
+  order should not make the strategic choice.
 - The task is small enough that one clear sentence already covers it.
 - Someone wants a status update or a record of finished work. Use Handoff or
   Nutshell instead.

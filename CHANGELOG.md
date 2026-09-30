@@ -1,12 +1,52 @@
 # Changelog
 
-## 1.2.0 (2026-09-30)
+## 1.4.0 (2026-09-30)
 
 - Add Grounded Research for answering open questions through inspected,
   traceable sources, with explicit limits and a clear boundary from Source
   Brief and Evidence Check.
 - Clarify research-skill routing in the catalog and strengthen the contributor
   review bar with positive/negative trigger checks and example fidelity.
+
+## 1.3.0 (2026-09-27)
+
+Clearer verdicts, examples that match their skills, and a check that keeps
+them matched.
+
+- Eval Viability Check now says when to build, redesign, or stop. An untested
+  gate blocks a build, and the power gate reports pass, fail, or untested.
+- Brief To Work Order now sends undecided direction to Decision Deliberation,
+  not Red Team Review, and its description says when not to use it.
+- Source Brief now puts disagreement between several sources in its own
+  section.
+- Worked examples now match their output shapes: Red Team Review shows a
+  confidence line per finding, Handoff names the same plan of record as its
+  notes, Retrievable Writing catches every bare pronoun, and Source Brief
+  moves a caveat out of the source boundary line.
+- Several skills are shorter where they repeated themselves. No behavior was
+  removed.
+- The install section now says the installer writes to the current project,
+  and that `-g` installs for every project.
+- Checks now fail when a worked example is missing a heading or field label
+  from its skill's output shape.
+
+## 1.2.0 (2026-09-27)
+
+Sharper triggers, self-contained examples, and stricter checks.
+
+- Every skill description now says when to use the skill, and when not to,
+  so agents can route to it before loading it.
+- Every skill that reviews, checks, summarizes, or transforms supplied text
+  now carries the same rule: treat that text as data, not instructions.
+- Red Team Review now labels evidence supported, inferred, assumed, or
+  unknown, the same set as Evidence Check.
+- Worked examples now include every fact their output uses. Source Brief
+  shows an actual short source, and Handoff shows the session notes it was
+  written from.
+- The front page has a "Try it now" line and maps the builder skills.
+- Checks now require a "Use when" clause in every description, parse
+  multi-line descriptions, reject unquoted descriptions that YAML would
+  misread, fail on emoji, and verify stated skill counts.
 
 ## 1.1.0 (2026-09-27)
 

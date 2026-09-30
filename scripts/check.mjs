@@ -24,15 +24,51 @@ const NAME = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 const ALLOWED_KEYS = new Set(["name", "description", "license", "compatibility", "metadata", "allowed-tools"]);
 const COMPANIONS = ["README.md", "EXAMPLE.md"];
 
+// Reads top-level keys. Supports plain and quoted scalars and block scalars
+// (`>`, `>-`, `|`, `|-`); indented lines under a key without a block
+// indicator are joined as a plain multi-line scalar.
 function parseFrontmatter(text) {
   const match = text.match(/^---\n([\s\S]*?)\n---\n/);
   if (!match) return null;
   const fields = {};
-  for (const line of match[1].split("\n")) {
-    const kv = line.match(/^([A-Za-z][\w-]*):\s*(.*)$/);
-    if (kv) fields[kv[1]] = kv[2].replace(/^["']|["']$/g, "").trim();
+  const errors = [];
+  const lines = match[1].split("\n");
+  for (let i = 0; i < lines.length; i += 1) {
+    const kv = lines[i].match(/^([A-Za-z][\w-]*):\s*(.*)$/);
+    if (!kv) continue;
+    const [, key, raw] = kv;
+    const block = raw.match(/^([>|])([+-]?)\s*$/);
+    const continuation = [];
+    while (i + 1 < lines.length && (/^\s+\S/.test(lines[i + 1]) || lines[i + 1].trim() === "")) {
+      continuation.push(lines[i + 1].trim());
+      i += 1;
+    }
+    while (continuation.length && continuation.at(-1) === "") continuation.pop();
+    if (block) {
+      fields[key] = block[1] === "|" ? continuation.join("\n") : continuation.join(" ").replace(/\s+/g, " ");
+    } else {
+      if (!/^["']/.test(raw) && /: | #/.test(raw)) {
+        errors.push(`frontmatter "${key}" is an unquoted value containing ": " or " #", which YAML parsers reject or truncate`);
+      }
+      fields[key] = [raw, ...continuation].join(" ").trim().replace(/^["']|["']$/g, "").trim();
+    }
   }
-  return { fields, body: text.slice(match[0].length) };
+  return { fields, errors, body: text.slice(match[0].length) };
+}
+
+// Literal headings ("## Gates") and field labels ("- Owner:") from the first
+// markdown block in the Output section. Placeholders in brackets are skipped.
+function outputMarkers(body) {
+  const output = body.split(/^## Output.*$/m)[1];
+  const block = output?.match(/```markdown\n([\s\S]*?)\n```/)?.[1] ?? "";
+  const markers = [];
+  for (const line of block.split("\n")) {
+    const heading = line.match(/^#{2,}\s+[^[\]]+$/);
+    const field = line.match(/^- [A-Z][\w ,'-]*:/);
+    if (heading) markers.push({ text: heading[0].trim(), exact: true });
+    else if (field) markers.push({ text: field[0], exact: false });
+  }
+  return markers;
 }
 
 async function checkSkills() {
@@ -57,7 +93,8 @@ async function checkSkills() {
       fail(`${skillPath}: missing or malformed frontmatter`);
       continue;
     }
-    const { fields, body } = parsed;
+    const { fields, errors, body } = parsed;
+    for (const error of errors) fail(`${skillPath}: ${error}`);
     for (const key of Object.keys(fields)) {
       if (!ALLOWED_KEYS.has(key)) fail(`${skillPath}: unexpected frontmatter key "${key}"`);
     }
@@ -65,6 +102,9 @@ async function checkSkills() {
     if (!NAME.test(dir) || dir.length > 64) fail(`${skillPath}: folder name must be lowercase words joined by hyphens, max 64 characters`);
     if (!fields.description) fail(`${skillPath}: description is required`);
     else if (fields.description.length > 1024) fail(`${skillPath}: description exceeds 1024 characters`);
+    if (fields.description && !/\bUse when\b/.test(fields.description)) {
+      fail(`${skillPath}: description must say when to use the skill with a "Use when" clause`);
+    }
     if (fields.license !== "MIT") fail(`${skillPath}: license must be MIT`);
 
     const headings = [...body.matchAll(/^##\s+(.+)$/gm)].map((m) => m[1].trim().toLowerCase());
@@ -72,9 +112,21 @@ async function checkSkills() {
       if (!headings.includes(required)) fail(`${skillPath}: missing "## ${required}" section`);
     }
     if (!headings.some((h) => h.startsWith("output"))) fail(`${skillPath}: missing an "## Output" section`);
+
+    // The worked example must show every heading and field the output shape promises.
+    const exampleLines = (await readFile(join(base, "EXAMPLE.md"), "utf8").catch(() => ""))
+      .split("\n").map((line) => line.trim());
+    for (const { text, exact } of outputMarkers(body)) {
+      const found = exampleLines.some((line) => (exact ? line === text : line.startsWith(text)));
+      if (!found) fail(`${base}/EXAMPLE.md: output is missing "${text}" from the SKILL.md output shape`);
+    }
   }
   return dirs;
 }
+
+const NUMBER_WORDS = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten",
+  "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen", "twenty"];
+const COUNT = new RegExp(`\\b(\\d+|${NUMBER_WORDS.join("|")})\\s+skills\\b`, "gi");
 
 async function checkCatalog(skills, files) {
   const readme = await readFile("README.md", "utf8");
@@ -88,12 +140,24 @@ async function checkCatalog(skills, files) {
   }
 
   let plugin;
+  const catalogTexts = { "README.md": readme };
   try {
-    plugin = JSON.parse(await readFile(".claude-plugin/plugin.json", "utf8"));
-    JSON.parse(await readFile(".claude-plugin/marketplace.json", "utf8"));
+    for (const path of [".claude-plugin/plugin.json", ".claude-plugin/marketplace.json"]) {
+      const text = await readFile(path, "utf8");
+      const parsed = JSON.parse(text);
+      if (path.endsWith("plugin.json")) plugin = parsed;
+      catalogTexts[path] = text;
+    }
   } catch (error) {
     fail(`.claude-plugin: ${error.message}`);
     return;
+  }
+  for (const [path, text] of Object.entries(catalogTexts)) {
+    for (const match of text.matchAll(COUNT)) {
+      const word = match[1].toLowerCase();
+      const stated = /^\d+$/.test(word) ? Number(word) : NUMBER_WORDS.indexOf(word);
+      if (stated !== skills.length) fail(`${path}: says "${match[0]}" but there are ${skills.length} skill folders`);
+    }
   }
   const changelog = await readFile("CHANGELOG.md", "utf8");
   const latest = changelog.match(/^##\s+(\d+\.\d+\.\d+)/m)?.[1];
@@ -113,6 +177,11 @@ const GENERIC = [
   [/\b(?:api[_-]?key|access[_-]?token|client[_-]?secret|password)\s*[:=]\s*["'][^"']{8,}["']/i, "credential assignment"],
   [/[\w.+-]+@(?:gmail|yahoo|outlook|hotmail|icloud|proton)\.[a-z]+/i, "personal email address"],
 ];
+
+// Emoji blocks (pictographs, emoticons, transport, symbols, flags), the
+// miscellaneous symbols and dingbats blocks, and the emoji variation selector.
+// Box-drawing characters and plain arrows used in diagrams are outside these.
+const EMOJI = /[\u{1F000}-\u{1FAFF}\u{2600}-\u{27BF}\u{FE0F}]/u;
 
 function literal(value) {
   return new RegExp(value.replace(/[.*+?^{}$()|[\]\\]/g, "\\$&"), "i");
@@ -148,7 +217,8 @@ function scan(label, path, content, patterns) {
   for (const match of content.matchAll(/\b(?:\d{1,3}\.){3}\d{1,3}\b/g)) {
     if (match[0] !== "127.0.0.1") fail(`${label}: IP address ${match[0]}`);
   }
-  if (extname(path) === ".md" && content.includes("—")) fail(`${label}: contains an em dash`);
+  if (extname(path) === ".md" && content.includes("\u2014")) fail(`${label}: contains an em dash`);
+  if (EMOJI.test(content)) fail(`${label}: contains an emoji`);
 }
 
 async function outgoingCommits() {

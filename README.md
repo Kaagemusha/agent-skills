@@ -10,11 +10,16 @@ Each skill is one plain Markdown file of instructions. They work with any
 agent that supports the open `SKILL.md` format, and they are just as usable
 pasted into a chat.
 
+**Try it now.** After installing, ask your agent: "Use Red Team Review on
+this plan before I commit to it," then paste the plan. Without installing,
+paste [the skill's SKILL.md](skills/red-team-review/SKILL.md) into the chat
+first.
+
 ## Skills for everyday work
 
 | Skill | Use it when | What you get |
 |---|---|---|
-| [Decision Deliberation](skills/decision-deliberation) | A consequential choice has no plan yet | Five lenses, a tension map, and options for the person who decides |
+| [Decision Deliberation](skills/decision-deliberation) | A consequential choice is still open | Five lenses, a tension map, and options for the person who decides |
 | [Source Brief](skills/source-brief) | A long source needs to be read fast | A short brief checked sentence by sentence against the source |
 | [Grounded Research](skills/grounded-research) | You have a question but no source set | A concise answer supported by inspected, traceable sources |
 | [Brief To Work Order](skills/brief-to-work-order) | A request is ready to be assigned | Bounded scope, deliverables, owner, and pass/fail acceptance checks |
@@ -50,6 +55,14 @@ sources  ──> Source Brief ───────────┤
                                                                      └──> Nutshell  (finished)
 ```
 
+The builder skills sit beside that flow:
+
+```text
+planned eval  ──> Eval Viability Check ──> build, redesign, or stop
+agent notes   ──> Retrievable Writing  ──> sections that stand alone
+reused prompt ──> Skill Or Not         ──> skill, saved prompt, or nothing
+```
+
 Use them together or on their own. None depends on another.
 
 ## Install
@@ -60,6 +73,9 @@ detects the agents on your machine:
 ```bash
 npx skills add Kaagemusha/agent-skills
 ```
+
+This installs into the current project. Add `-g` to install for your user
+account instead, so the skills work in every project.
 
 Install one skill only:
 
