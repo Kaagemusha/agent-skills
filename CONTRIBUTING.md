@@ -27,6 +27,15 @@ npm run check
 - It works with any model and any tool setup.
 - It contains nothing specific to one person's machines, projects, or
   accounts.
+- A reviewer can distinguish it from neighboring skills using a positive and
+  a negative example.
+- Its worked example follows the stated method and does not teach unsupported
+  facts as if they were real.
+
+When revising a skill, check its trigger and non-trigger, then read its
+overview and example beside the instructions. Prefer fixing a demonstrated
+ambiguity or failure over adding rules for hypothetical cases. Keep the
+catalog's routing guidance aligned when a skill's boundary changes.
 
 ## Checks
 

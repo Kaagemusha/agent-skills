@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.4.0 (2026-09-30)
+
+- Add Grounded Research for answering open questions through inspected,
+  traceable sources, with explicit limits and a clear boundary from Source
+  Brief and Evidence Check.
+- Clarify research-skill routing in the catalog and strengthen the contributor
+  review bar with positive/negative trigger checks and example fidelity.
+
 ## 1.3.0 (2026-09-27)
 
 Clearer verdicts, examples that match their skills, and a check that keeps

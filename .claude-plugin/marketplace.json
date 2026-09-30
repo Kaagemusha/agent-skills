@@ -8,7 +8,7 @@
   "plugins": [
     {
       "name": "agent-skills",
-      "description": "Ten skills: Decision Deliberation, Source Brief, Brief To Work Order, Evidence Check, Red Team Review, Handoff, Nutshell, Eval Viability Check, Retrievable Writing, and Skill Or Not.",
+      "description": "Eleven skills for grounded research, decisions, evidence checks, reviews, handoffs, and building agent systems.",
       "source": "./"
     }
   ]
