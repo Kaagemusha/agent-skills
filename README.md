@@ -16,6 +16,7 @@ pasted into a chat.
 |---|---|---|
 | [Decision Deliberation](skills/decision-deliberation) | A consequential choice has no plan yet | Five lenses, a tension map, and options for the person who decides |
 | [Source Brief](skills/source-brief) | A long source needs to be read fast | A short brief checked sentence by sentence against the source |
+| [Grounded Research](skills/grounded-research) | You have a question but no source set | A concise answer supported by inspected, traceable sources |
 | [Brief To Work Order](skills/brief-to-work-order) | A request is ready to be assigned | Bounded scope, deliverables, owner, and pass/fail acceptance checks |
 | [Evidence Check](skills/evidence-check) | A draft or decision rests on claims | Each claim labeled supported, inferred, assumed, or unknown, with its source |
 | [Red Team Review](skills/red-team-review) | A plan or draft is about to be relied on | The few failure modes that could change the decision, with evidence and confidence |
@@ -32,6 +33,10 @@ pasted into a chat.
 
 Every skill folder has the instructions (`SKILL.md`), a short overview
 (`README.md`), and a worked example (`EXAMPLE.md`).
+
+For research, use **Grounded Research** to find and compare evidence for an
+open question, **Source Brief** to compress material you provide, and
+**Evidence Check** to audit claims in a draft against evidence.
 
 ## How they fit together
 
